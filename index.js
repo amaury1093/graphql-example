@@ -10,4 +10,4 @@ const app = express();
 // BodyParser is needed just for POST. 
 app.use('/graphql', bodyParser.json(), graphqlExpress({ schema: myGraphQLSchema }));
  
-app.listen(PORT, () => console.log(`App listening on localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Express app listening on localhost:${PORT}`));
