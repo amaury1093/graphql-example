@@ -10,8 +10,8 @@
     "env": "node"
   },
   "scripts": {
-    "start": "nodemon --watch app/ --exec babel-node index.js",
-    "lint": "semistandard"
+    "start": "nodemon --exec babel-node index.js",
+    "lint": "semistandard --fix"
   },
   "dependencies": {
     "body-parser": "^1.17.2",

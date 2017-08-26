@@ -1,6 +1,8 @@
 import Sequelize from 'sequelize';
 
 import User from './user.model';
+import Project from './project.model';
+import Task from './task.model';
 
 const sequelize = new Sequelize(null, null, null, {
   dialect: 'sqlite',
@@ -9,6 +11,8 @@ const sequelize = new Sequelize(null, null, null, {
 });
 
 User(sequelize);
+Project(sequelize);
+Task(sequelize);
 
 // Set up data relationships
 const models = sequelize.models;

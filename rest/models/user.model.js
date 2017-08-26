@@ -7,6 +7,6 @@ export default function (sequelize) {
   });
 
   User.associate = (models) => {
-    // User.hasMany(models.Projects);
+    User.hasMany(models.Project);
   }
 };

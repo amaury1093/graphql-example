@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { graphqlExpress } from 'graphql-server-express';
 
-import routes from './app/routes';
+import routes from './rest/routes';
 const myGraphQLSchema = {}; // ... define or import your schema here!
 
 const app = express();
