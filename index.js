@@ -3,9 +3,7 @@ import bodyParser from 'body-parser';
 import { graphqlExpress } from 'graphql-server-express';
 
 import routes from './app/routes';
-
-const myGraphQLSchema = {};// ... define or import your schema here!
-const PORT = 3000;
+const myGraphQLSchema = {}; // ... define or import your schema here!
 
 const app = express();
 
@@ -13,9 +11,9 @@ const app = express();
 app.use(bodyParser.json());
 
 // Mount REST on /api
-app.use('api/', routes);
+app.use('/api', routes);
 
 // Mount GraphQL on /graphql
 app.use('/graphql', graphqlExpress({ schema: myGraphQLSchema }));
 
-app.listen(PORT, () => console.log(`Express app listening on localhost:${PORT}`));
+app.listen(3000, () => console.log('Express app listening on localhost:3000'));

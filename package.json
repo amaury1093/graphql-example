@@ -17,7 +17,9 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "graphql": "^0.11.1",
-    "graphql-server-express": "^1.1.2"
+    "graphql-server-express": "^1.1.2",
+    "sequelize": "^4.7.5",
+    "sqlite3": "^3.1.9"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
