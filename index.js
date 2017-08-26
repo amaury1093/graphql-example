@@ -1,9 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { graphqlExpress } from 'graphql-server-express';
+import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
+import { makeExecutableSchema } from 'graphql-tools';
 
 import routes from './rest/routes';
-const myGraphQLSchema = {}; // ... define or import your schema here!
+import typeDefs from './graphql/typeDefs';
+import resolvers from './graphql/resolvers';
 
 const app = express();
 
@@ -14,6 +16,11 @@ app.use(bodyParser.json());
 app.use('/api', routes);
 
 // Mount GraphQL on /graphql
-app.use('/graphql', graphqlExpress({ schema: myGraphQLSchema }));
+const schema = makeExecutableSchema({
+  typeDefs,
+  resolvers: resolvers(),
+});
+app.use('/graphql', graphqlExpress({ schema }));
+app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
 app.listen(3000, () => console.log('Express app listening on localhost:3000'));
