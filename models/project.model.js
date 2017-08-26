@@ -9,6 +9,7 @@ export default function (sequelize) {
   });
 
   Project.associate = (models) => {
+    Project.belongsTo(models.User);
     Project.hasMany(models.Task);
   }
 };

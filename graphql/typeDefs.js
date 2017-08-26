@@ -3,11 +3,13 @@ type User {
   id: ID!
   firstname: String
   lastname: String
+  projects: [Project]
 }
 
 type Project {
   id: ID!
   name: String
+  tasks: [Task]
 }
 
 type Task {

@@ -7,4 +7,8 @@ export default function (sequelize) {
     createdAt: false,
     updatedAt: false,
   });
+
+  Task.associate = (models) => {
+    Task.belongsTo(models.Project);
+  }
 };

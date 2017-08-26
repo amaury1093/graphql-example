@@ -13,5 +13,17 @@ export default function resolvers() {
         return models.User.findAll({}, context);
       }
     },
+
+    User: {
+      projects(user) {
+        return user.getProjects();
+      },
+    },
+
+    Project: {
+      tasks(project) {
+        return project.getTasks();
+      },
+    },
   }
 };
