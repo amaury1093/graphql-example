@@ -1,13 +1,21 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { graphqlExpress } from 'graphql-server-express';
- 
-const myGraphQLSchema = {};// ... define or import your schema here! 
+
+import routes from './app/routes';
+
+const myGraphQLSchema = {};// ... define or import your schema here!
 const PORT = 3000;
- 
+
 const app = express();
- 
-// BodyParser is needed just for POST. 
-app.use('/graphql', bodyParser.json(), graphqlExpress({ schema: myGraphQLSchema }));
- 
+
+// Middlewares
+app.use(bodyParser.json());
+
+// Mount REST on /api
+app.use('api/', routes);
+
+// Mount GraphQL on /graphql
+app.use('/graphql', graphqlExpress({ schema: myGraphQLSchema }));
+
 app.listen(PORT, () => console.log(`Express app listening on localhost:${PORT}`));
