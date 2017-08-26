@@ -18,7 +18,7 @@ app.use('/api', routes);
 // Mount GraphQL on /graphql
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers: resolvers(),
+  resolvers: resolvers()
 });
 app.use('/graphql', graphqlExpress({ schema }));
 app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));

@@ -5,7 +5,7 @@ const Task = sequelize.models.Task;
 /**
  * Load Task and append to req.
  */
-function load(req, res, next, id) {
+function load (req, res, next, id) {
   Task.findOne({ id })
     .then((Task) => {
       req.Task = Task; // eslint-disable-line no-param-reassign
@@ -20,7 +20,7 @@ function load(req, res, next, id) {
  * @property {number} req.query.limit - Limit number of Tasks to be returned.
  * @returns {Task[]}
  */
-function list(req, res, next) {
+function list (req, res, next) {
   Task.findAll()
     .then(Tasks => res.json(Tasks))
     .catch(e => next(e));
@@ -30,7 +30,7 @@ function list(req, res, next) {
  * Get Task
  * @returns {Task}
  */
-function get(req, res) {
+function get (req, res) {
   return res.json(req.Task);
 }
 

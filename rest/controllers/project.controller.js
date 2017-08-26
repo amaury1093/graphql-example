@@ -5,7 +5,7 @@ const Project = sequelize.models.Project;
 /**
  * Load Project and append to req.
  */
-function load(req, res, next, id) {
+function load (req, res, next, id) {
   Project.findOne({ id })
     .then((Project) => {
       req.Project = Project; // eslint-disable-line no-param-reassign
@@ -20,7 +20,7 @@ function load(req, res, next, id) {
  * @property {number} req.query.limit - Limit number of Projects to be returned.
  * @returns {Project[]}
  */
-function list(req, res, next) {
+function list (req, res, next) {
   Project.findAll()
     .then(Projects => res.json(Projects))
     .catch(e => next(e));
@@ -30,7 +30,7 @@ function list(req, res, next) {
  * Get Project
  * @returns {Project}
  */
-function get(req, res) {
+function get (req, res) {
   return res.json(req.Project);
 }
 

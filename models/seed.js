@@ -1,16 +1,14 @@
-import sequelize from './';
-
 // Add some data in the databas
 export default function (sequelize) {
   const models = sequelize.models;
 
   models.User.create({
     firstname: 'John',
-    lastname: 'Doe',
+    lastname: 'Doe'
   })
   .then((user) => models.Project.create({
     name: 'Migrate from REST to GraphQL',
-    UserId: user.id,
+    UserId: user.id
   }))
   .then((project) => {
     models.Task.create({
@@ -25,7 +23,7 @@ export default function (sequelize) {
   })
   .then((project) => models.Project.create({
     name: 'Create a blog',
-    UserId: project.UserId,
+    UserId: project.UserId
   }))
   .then((project) => {
     models.Task.create({
@@ -38,13 +36,13 @@ export default function (sequelize) {
     });
     return Promise.resolve();
   })
-  .then(()=> models.User.create({
+  .then(() => models.User.create({
     firstname: 'Alicia',
-    lastname: 'Smith',
+    lastname: 'Smith'
   }))
   .then((user) => models.Project.create({
     name: 'Email Marketing Campaign',
-    UserId: user.id,
+    UserId: user.id
   }))
   .then((project) => {
     models.Task.create({
@@ -59,7 +57,7 @@ export default function (sequelize) {
   })
   .then((project) => models.Project.create({
     name: 'Hire new developer',
-    UserId: project.UserId,
+    UserId: project.UserId
   }))
   .then((project) => {
     models.Task.create({
@@ -71,5 +69,5 @@ export default function (sequelize) {
       ProjectId: project.id
     });
     return Promise.resolve();
-  })
-};
+  });
+}

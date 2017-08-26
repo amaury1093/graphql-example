@@ -5,7 +5,7 @@ const router = express.Router(); // eslint-disable-line new-cap
 
 router.route('/')
   /** GET /api/tasks - Get list of tasks */
-  .get(taskController.list)
+  .get(taskController.list);
 
 router.route('/:taskId')
   /** GET /api/tasks/:taskId - Get task */

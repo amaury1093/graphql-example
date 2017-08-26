@@ -8,7 +8,7 @@ import seed from './seed'; // eslint-disable-line
 const sequelize = new Sequelize(null, null, null, {
   dialect: 'sqlite',
   storage: 'db.sqlite',
-  logging: false,
+  logging: false
 });
 
 User(sequelize);

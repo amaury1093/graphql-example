@@ -5,7 +5,7 @@ const router = express.Router(); // eslint-disable-line new-cap
 
 router.route('/')
   /** GET /api/users - Get list of users */
-  .get(userController.list)
+  .get(userController.list);
 
 router.route('/:userId')
   /** GET /api/users/:userId - Get user */
