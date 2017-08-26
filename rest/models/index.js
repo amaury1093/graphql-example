@@ -3,6 +3,7 @@ import Sequelize from 'sequelize';
 import User from './user.model';
 import Project from './project.model';
 import Task from './task.model';
+import seed from './seed'; // eslint-disable-line
 
 const sequelize = new Sequelize(null, null, null, {
   dialect: 'sqlite',
@@ -23,6 +24,7 @@ Object.keys(models).forEach(name => {
 });
 
 sequelize.sync();
-// sequelize.sync({ force: true }); // Update columns, delete all records
+// Uncomment the line if you want to rerun DB seed
+// sequelize.sync({ force: true }).then(() => seed(sequelize));
 
 export default sequelize;
