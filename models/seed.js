@@ -4,7 +4,8 @@ export default function (sequelize) {
 
   models.User.create({
     firstname: 'John',
-    lastname: 'Doe'
+    lastname: 'Doe',
+    email: 'john.doe@example.com'
   })
   .then((user) => models.Project.create({
     name: 'Migrate from REST to GraphQL',
@@ -38,7 +39,8 @@ export default function (sequelize) {
   })
   .then(() => models.User.create({
     firstname: 'Alicia',
-    lastname: 'Smith'
+    lastname: 'Smith',
+    email: 'alicia.smith@example.com'
   }))
   .then((user) => models.Project.create({
     name: 'Email Marketing Campaign',
