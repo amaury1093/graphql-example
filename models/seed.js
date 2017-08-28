@@ -1,4 +1,4 @@
-// Add some data in the databas
+// Add some data in the database
 export default function (sequelize) {
   const models = sequelize.models;
 

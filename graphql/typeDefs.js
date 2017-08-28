@@ -32,6 +32,7 @@ type RootQuery {
 # We call them RootQuery and RootMutation by convention.
 schema {
   query: RootQuery
+  # mutation: RootMutation # Our mutations would go here
 }
 `;
 
