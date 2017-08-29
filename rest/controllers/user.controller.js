@@ -34,4 +34,14 @@ function get (req, res) {
   return res.json(req.user);
 }
 
-export default { load, get, list };
+/**
+ * List projects of user
+ * @returns {Projects[]}
+ */
+function listProjects (req, res, next) {
+  req.user.getProjects()
+    .then(projects => res.json(projects))
+    .catch(e => next(e));
+}
+
+export default { load, get, list, listProjects };

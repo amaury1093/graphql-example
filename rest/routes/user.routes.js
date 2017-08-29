@@ -11,6 +11,10 @@ router.route('/:userId')
   /** GET /api/users/:userId - Get user */
   .get(userController.get);
 
+router.route('/:userId/projects')
+  /** GET /api/users/:userId/projects - List projects of user */
+  .get(userController.listProjects);
+
 /** Load user when API with userId route parameter is hit */
 router.param('userId', userController.load);
 
