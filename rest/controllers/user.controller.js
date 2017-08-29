@@ -6,7 +6,7 @@ const User = sequelize.models.User;
  * Load user and append to req.
  */
 function load (req, res, next, id) {
-  User.findOne({ id })
+  User.findById(id)
     .then((user) => {
       req.user = user; // eslint-disable-line no-param-reassign
       return next();
