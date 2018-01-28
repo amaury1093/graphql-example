@@ -1,5 +1,5 @@
 # graphql-example
-GraphQL Example project for Toptal blog article
+GraphQL Example project for Toptal blog article: https://www.toptal.com/api-development/graphql-vs-rest-tutorial#utilize-unreal-developers-today
 
 Getting Started
 ---
