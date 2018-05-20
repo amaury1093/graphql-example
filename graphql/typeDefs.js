@@ -27,6 +27,7 @@ input ProjectInput {
 type Task {
   id: ID!
   description: String
+  ProjectId: ID!
 }
 
 input TaskInput {
